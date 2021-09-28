@@ -1,0 +1,57 @@
+ALGORITHM VECTORS
+PROCEDURE dot_product(ps:FLOAT);
+VAR
+    V1 : ARRAY_OF FLOAT[N];
+    V2 : ARRAY_OF FLOAT[N];
+    i : INTEGER;
+    ps : FLOAT;
+BEGIN
+// produict scalaire de deux vecteurs 
+        ps := 0;
+  FOR i FROM 0 TO N-1 STEP step 1 DO
+        ps+ = V1[i] * V2[i];
+        WRITE(ps);
+  END_FOR  
+// determiner si deux vecteurs sont orthogonanx
+     WRITE("donner le premier vecteur");
+     READ(V1[N]);
+     WRITE("donner le deuxieme vecteur");
+     READ(V2[N]);
+  FOR i FROM 0 TO N-1 STEP step 1 DO
+        ps+ = V1[i] * V2[i];
+
+        IF (ps ==0) THEN
+        WRITE("les vecteurs ",V1[N], " et ",V2[N], " sont orthogonaux ");
+        END_IF   
+  END_FOR
+
+END
+// on utilise une fonction 
+ALGORITHM VECTORS 
+FUNCTION dot_product(ps:FLOAT) : FLOAT;
+VAR
+    V1 : ARRAY_OF FLOAT[N];
+    V2 : ARRAY_OF FLOAT[N];
+    i : INTEGER;
+    ps : FLOAT;
+BEGIN
+// produict scalaire de deux vecteurs 
+        ps := 0;
+  FOR i FROM 0 TO N-1 STEP step 1 DO
+        ps+ = V1[i] * V2[i];
+        WRITE(ps);
+  END_FOR  
+// determiner si deux vecteurs sont orthogonanx
+     WRITE("donner le premier vecteur");
+     READ(V1[N]);
+     WRITE("donner le deuxieme vecteur");
+     READ(V2[N]);
+  FOR i FROM 0 TO N-1 STEP step 1 DO
+        ps+ = V1[i] * V2[i];
+
+        IF (ps ==0) THEN
+        WRITE("les vecteurs ",V1[N], " et ",V2[N], " sont orthogonaux ");
+        END_IF   
+  END_FOR
+    RETURN ps ;
+END
