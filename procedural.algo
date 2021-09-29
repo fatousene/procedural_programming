@@ -1,57 +1,47 @@
 ALGORITHM VECTORS
-PROCEDURE dot_product(ps:FLOAT);
+PROCEDURE dot_product(V1: ARRAY_OF FLOAT[N],V2: ARRAY_OF FLOAT[N]);
 VAR
-    V1 : ARRAY_OF FLOAT[N];
-    V2 : ARRAY_OF FLOAT[N];
     i : INTEGER;
     ps : FLOAT;
-BEGIN
-// produict scalaire de deux vecteurs 
-        ps := 0;
-  FOR i FROM 0 TO N-1 STEP step 1 DO
-        ps+ = V1[i] * V2[i];
-        WRITE(ps);
-  END_FOR  
-// determiner si deux vecteurs sont orthogonanx
+BEGIN 
+// donner deux vecteurs 
      WRITE("donner le premier vecteur");
      READ(V1[N]);
      WRITE("donner le deuxieme vecteur");
      READ(V2[N]);
+// produit scalaire de deux vecteurs
+        ps := 0;
   FOR i FROM 0 TO N-1 STEP step 1 DO
         ps+ = V1[i] * V2[i];
-
-        IF (ps ==0) THEN
-        WRITE("les vecteurs ",V1[N], " et ",V2[N], " sont orthogonaux ");
-        END_IF   
-  END_FOR
+        WRITE(ps);
+ // determiner si deux vecteurs sont orthogonanx
+       IF (ps ==0) THEN
+              WRITE("les vecteurs ",V1[N], " et ",V2[N], " sont orthogonaux ");
+        END_IF
+  END_FOR  
 
 END
 // on utilise une fonction 
 ALGORITHM VECTORS 
-FUNCTION dot_product(ps:FLOAT) : FLOAT;
+FUNCTION dot_product(V1: ARRAY_OF FLOAT[N],V2: ARRAY_OF FLOAT[N]) : FLOAT;
 VAR
-    V1 : ARRAY_OF FLOAT[N];
-    V2 : ARRAY_OF FLOAT[N];
     i : INTEGER;
     ps : FLOAT;
 BEGIN
-// produict scalaire de deux vecteurs 
-        ps := 0;
-  FOR i FROM 0 TO N-1 STEP step 1 DO
-        ps+ = V1[i] * V2[i];
-        WRITE(ps);
-  END_FOR  
-// determiner si deux vecteurs sont orthogonanx
+// produit scalaire de deux vecteurs 
+// donner deux vecteurs 
      WRITE("donner le premier vecteur");
      READ(V1[N]);
      WRITE("donner le deuxieme vecteur");
      READ(V2[N]);
+        ps := 0;
   FOR i FROM 0 TO N-1 STEP step 1 DO
         ps+ = V1[i] * V2[i];
-
-        IF (ps ==0) THEN
-        WRITE("les vecteurs ",V1[N], " et ",V2[N], " sont orthogonaux ");
-        END_IF   
-  END_FOR
+        WRITE(ps);
+// determiner si deux vecteurs sont orthogonanx
+         IF (ps ==0) THEN
+              WRITE("les vecteurs ",V1[N], " et ",V2[N], " sont orthogonaux ");
+        END_IF
+  END_FOR  
     RETURN ps ;
 END
